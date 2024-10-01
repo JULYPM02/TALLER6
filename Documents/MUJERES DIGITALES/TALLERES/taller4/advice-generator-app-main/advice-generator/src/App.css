@@ -1,0 +1,49 @@
+.advice-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: hsl(218, 23%, 16%);
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  padding: 20px;
+}
+
+.advice-card {
+  background-color: hsl(217, 19%, 24%);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  text-align: center;
+}
+
+.advice-id {
+  color: hsl(150, 100%, 66%);
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.advice-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.dice-button {
+  background-color: hsl(150, 100%, 66%);
+  border: none;
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dice-button:hover {
+  transform: rotate(360deg);
+}
+
+.dice-button img {
+  width: 30px;
+  height: 30px;
+}

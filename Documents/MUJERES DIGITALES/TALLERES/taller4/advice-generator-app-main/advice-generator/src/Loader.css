@@ -1,0 +1,68 @@
+
+:root {
+  --loader-width: 100px;
+  --loader-height: 35px;
+  --loader-size: 20px; 
+  --loader-color: var(--color-light-cyan, #00f); 
+  --loader-speed: 1.5s;
+}
+
+.loader {
+  width: var(--loader-width);
+  height: var(--loader-height);
+  background: radial-gradient(farthest-side, var(--loader-color) 94%, transparent) no-repeat 50% 0,
+              radial-gradient(farthest-side, var(--loader-color) 94%, transparent) no-repeat 100% 0;
+  background-size: var(--loader-size) var(--loader-size);
+  position: relative;
+  animation: move-background var(--loader-speed) linear infinite;
+  top: 30px; 
+}
+
+
+.loader:before {
+  content: '';
+  position: absolute;
+  height: var(--loader-size);
+  width: var(--loader-size);
+  border-radius: 50%;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  animation: move-dot var(--loader-speed) linear infinite, bounce 0.5s cubic-bezier(0, 200, 0.8, 200) infinite;
+}
+
+
+@keyframes move-background {
+  0%, 31% {
+    background-position: 50% 0, 100% 0;
+  }
+  33% {
+    background-position: 50% 100%, 100% 0;
+  }
+  43%, 64% {
+    background-position: 50% 0, 100% 0;
+  }
+  66% {
+    background-position: 50% 0, 100% 100%;
+  }
+  79% {
+    background-position: 50% 0, 100% 0;
+  }
+  100% {
+    transform: translateX(calc(-100% / 3));
+  }
+}
+
+
+@keyframes move-dot {
+  100% {
+    left: calc(100% + 7px); 
+  }
+}
+
+
+@keyframes bounce {
+  100% {
+    top: -0.1px; 
+  }
+}
