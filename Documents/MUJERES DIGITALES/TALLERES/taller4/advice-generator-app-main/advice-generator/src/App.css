@@ -1,49 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+:root {
+  --color-light-cyan: #cee3e9;
+  --color-neon-green: #52ffa8;
+  --color-grayish-blue: #4e5d73;
+  --color-dark-grayish: #323a49;
+  --color-dark-blue: #1f2632;
+
+  --fz-landscape: 1rem;
+  --fz-desktop: 0.8rem;
+  --fz-movile: 0.6rem;
+
+  --shadow-neon-green: #52ffa9cc;
+}
+html {
+  font-size: var(--fz-landscape);
+}
+
 .advice-layout {
+  background: var(--color-dark-blue);
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-color: hsl(218, 23%, 16%);
-  color: white;
-  font-family: 'Manrope', sans-serif;
-  padding: 20px;
 }
+.advice {
+  width: 45vw;
+  height: 40vh;
+  border-radius: 16px;
+  background-color: var(--color-dark-grayish);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 4rem 2.5rem 2.5rem;
+  position: relative;
+  transition: all 0.1s ease-in-out;
+}
+.advice__title {
+  color: var(--color-neon-green);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  transition: all 0.3s ease-in-out;
+  cursor: default;
 
-.advice-card {
-  background-color: hsl(217, 19%, 24%);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  &:hover {
+    text-shadow: 0 1px 4px var(--shadow-neon-green);
+    transform: scale(1.1);
+  }
+}
+.advice__description-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
+.advice__description-text {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-light-cyan);
+  transition: all 0.3s ease-in-out;
 
-.advice-id {
-  color: hsl(150, 100%, 66%);
-  font-size: 24px;
-  margin-bottom: 15px;
+  &:hover {
+    text-shadow: 0 1px 2px var(--color-light-cyan);
+    transform: scale(1.02);
+  }
+}
+.advice__image {
+  width: 100%;
+  height: 33px;
+}
+.advice__image img {
+  width: 100%;
+  height: 100%;
 }
 
-.advice-text {
-  font-size: 20px;
-  margin-bottom: 20px;
+.advice__buttons {
+  display: flex;
+  width: 100%;
+  bottom: -30px;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  padding: 0 5vw;
+  box-sizing: border-box;
 }
-
-.dice-button {
-  background-color: hsl(150, 100%, 66%);
-  border: none;
+.advice__button {
+  background-color: var(--color-neon-green);
+  border: unset;
   border-radius: 50%;
-  padding: 20px;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
-  transition: transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 15px 5px var(--shadow-neon-green);
+    transform: scale(1.1);
+  }
+}
+.advice__button--pos-left {
+  left: 1rem;
+}
+.advice__button--pos-right {
+  right: 1rem;
 }
 
-.dice-button:hover {
-  transform: rotate(360deg);
+.advice__button-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.advice__button-icon img {
+  width: 100%;
+  height: 100%;
 }
 
-.dice-button img {
-  width: 30px;
-  height: 30px;
+@media screen and (max-width: 1440px) {
+  html {
+    font-size: var(--fz-desktop);
+  }
+  .advice {
+    width: 55vw;
+  }
+  .advice__button-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .advice__image {
+    width: 100%;
+    height: 25px;
+  }
+  .advice__title {
+    color: var(--color-neon-green);
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  html {
+    font-size: var(--fz-movile);
+  }
+  .advice {
+    width: 75vw;
+    height: 35vh;
+  }
+  .advice__button-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .advice__button {
+    padding: 1.6rem;
+  }
+  .advice__image {
+    width: 100%;
+    height: 16px;
+  }
+  .advice__title {
+    color: var(--color-neon-green);
+    font-size: 1.2rem;
+  }
 }

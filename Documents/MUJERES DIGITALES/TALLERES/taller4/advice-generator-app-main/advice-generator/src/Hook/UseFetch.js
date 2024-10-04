@@ -10,8 +10,9 @@ export const useFetch = () => {
 
     const fetchData = async (defaultFetch = false) => {
         const url = defaultFetch || state.id === 0 ? state.url : `${state.url}/${state.id}`;
+        console.log('Fetching from URL:', url); 
+    
         setLoading(true);
-
         try {
             const response = await fetch(url);
             const resJson = await response.json();
@@ -19,16 +20,12 @@ export const useFetch = () => {
             setData(resJson);
         } catch (err) {
             setError(true);
+            console.error("Error fetching data: ", err); 
         } finally {
             setLoading(false);
         }
+        
     };
-
-    useEffect(() => {
-        if (state.id !== 0) {
-            fetchData();
-        }
-    }, [state.id]);
-
+    
     return { data, error, loading, dispatch, fetchData };
 };

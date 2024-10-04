@@ -1,45 +1,36 @@
-
-:root {
-  --loader-width: 100px;
-  --loader-height: 35px;
-  --loader-size: 20px; 
-  --loader-color: var(--color-light-cyan, #00f); 
-  --loader-speed: 1.5s;
-}
-
 .loader {
-  width: var(--loader-width);
-  height: var(--loader-height);
-  background: radial-gradient(farthest-side, var(--loader-color) 94%, transparent) no-repeat 50% 0,
-              radial-gradient(farthest-side, var(--loader-color) 94%, transparent) no-repeat 100% 0;
-  background-size: var(--loader-size) var(--loader-size);
+  width: 100px;
+  height: 35px;
+  --_g: no-repeat
+    radial-gradient(farthest-side, var(--color-light-cyan) 94%, #0000);
+  background: var(--_g) 50% 0, var(--_g) 100% 0;
+  background-size: 20px 20px;
   position: relative;
-  animation: move-background var(--loader-speed) linear infinite;
-  top: 30px; 
+  animation: l23-0 1.5s linear infinite;
+  top: 30px;
 }
-
-
 .loader:before {
   content: '';
   position: absolute;
-  height: var(--loader-size);
-  width: var(--loader-size);
+  height: 20px;
+  aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--loader-color);
-  top: 0;
+  background: var(--color-light-cyan);
   left: 0;
-  animation: move-dot var(--loader-speed) linear infinite, bounce 0.5s cubic-bezier(0, 200, 0.8, 200) infinite;
+  top: 0;
+  animation: l23-1 1.5s linear infinite,
+    l23-2 0.5s cubic-bezier(0, 200, 0.8, 200) infinite;
 }
-
-
-@keyframes move-background {
-  0%, 31% {
+@keyframes l23-0 {
+  0%,
+  31% {
     background-position: 50% 0, 100% 0;
   }
   33% {
     background-position: 50% 100%, 100% 0;
   }
-  43%, 64% {
+  43%,
+  64% {
     background-position: 50% 0, 100% 0;
   }
   66% {
@@ -52,17 +43,13 @@
     transform: translateX(calc(-100% / 3));
   }
 }
-
-
-@keyframes move-dot {
+@keyframes l23-1 {
   100% {
-    left: calc(100% + 7px); 
+    left: calc(100% + 7px);
   }
 }
-
-
-@keyframes bounce {
+@keyframes l23-2 {
   100% {
-    top: -0.1px; 
+    top: -0.1px;
   }
 }

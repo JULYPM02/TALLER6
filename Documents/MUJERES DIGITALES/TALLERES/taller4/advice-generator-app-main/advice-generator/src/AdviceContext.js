@@ -1,9 +1,6 @@
-import { createContext} from 'react';
+import { createContext } from 'react';
 
-
-export const AdviceContext = createContext(null);
-
-
+const AdviceContext = createContext(null);
 
 export default AdviceContext;
 
