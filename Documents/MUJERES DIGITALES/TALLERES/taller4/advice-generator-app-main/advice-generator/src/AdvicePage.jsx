@@ -8,7 +8,7 @@ const AdvicePage = () => {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   return <AdviceFather/>;
 };

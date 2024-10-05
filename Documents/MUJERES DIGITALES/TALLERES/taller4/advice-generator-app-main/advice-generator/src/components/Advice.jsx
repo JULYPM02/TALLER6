@@ -8,7 +8,7 @@ export const Advice = ({ id, description, dispatch, fetchData, loading }) => {
   
   const handlePrev = () => dispatch({ type: 'PREV' });
   const handleNext = () => dispatch({ type: 'NEXT' });
-  const handleRandom = () => fetchData(false);
+  const handleRandom = () => fetchData();
 
   
   const Content = !loading ? (
