@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaComments } from 'react-icons/fa';  // Importa el ícono de comentarios
+import { FaComments } from 'react-icons/fa';  
 
 const PostDetail = ({ post }) => {
   return (

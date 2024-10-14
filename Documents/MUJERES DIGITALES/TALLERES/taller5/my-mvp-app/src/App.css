@@ -1,10 +1,10 @@
-/* Navbar Styles */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #4267B2; /* Facebook Blue */
+  background-color: #4267B2; 
   position: fixed;
   top: 0;
   width: 98%;
@@ -33,16 +33,16 @@
   cursor: pointer;
 }
 
-/* Feed Styles */
+
 .container {
-  margin-top: 60px; /* To account for the fixed navbar */
+  margin-top: 60px; 
   display: flex;
   justify-content: center;
-  background-color: #f0f2f5; /* Light grey background */
+  background-color: #f0f2f5; 
 }
 
 .feed {
-  width: 600px; /* Width of the feed */
+  width: 600px; 
 }
 
 .post {

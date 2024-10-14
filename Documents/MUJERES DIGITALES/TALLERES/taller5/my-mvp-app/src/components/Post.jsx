@@ -1,4 +1,4 @@
-// En el archivo Post.tsx
+
 import { useState } from 'react';
 import CommentsList from './CommentsList';
 
@@ -10,8 +10,8 @@ const Post = ({ user, content, initialComments }) => {
   const handleAddComment = () => {
     if (newComment.trim() !== '') {
       const newComments = [...comments, { id: comments.length + 1, text: newComment }];
-      setComments(newComments); // Añade el nuevo comentario a la lista
-      setNewComment(''); // Limpiar el campo de entrada
+      setComments(newComments); 
+      setNewComment(''); 
     }
   };
 

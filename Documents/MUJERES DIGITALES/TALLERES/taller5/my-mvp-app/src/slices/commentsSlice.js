@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchComments = createAsyncThunk('comments/fetchComments', async (postId) => {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/comments?postId={id}/${postId}`); // Reemplaza con la URL de tu API
+  const response = await fetch(`https://jsonplaceholder.typicode.com/comments?postId={id}/${postId}`); 
   return await response.json();
 });
 
@@ -19,7 +19,7 @@ const commentsSlice = createSlice({
       })
       .addCase(fetchComments.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        // Agregar comentarios bajo el ID del post
+        
         const { postId, comments } = action.payload;
         state.items[postId] = comments;
       })

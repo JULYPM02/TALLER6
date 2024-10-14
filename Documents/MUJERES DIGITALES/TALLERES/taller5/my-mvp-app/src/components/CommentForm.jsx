@@ -10,7 +10,7 @@ const CommentForm = () => {
     e.preventDefault();
     if (comment) {
       dispatch(addComment({ text: comment }));
-      setComment(''); // Limpiar el campo
+      setComment(''); 
     }
   };
 
